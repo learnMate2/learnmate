@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --main-color: #6b21a8;
+  --text-color: #E0E0E0;
+}
+
+html::-webkit-scrollbar {
+  width: .8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+}
+
+/* ============================Navbar=============== */
+#dashboardNav {
+  background-color: #6b21a8 !important;
+  color: #fff;
+}
+
+/* =======================login form==================== */
+.login {
+  background: #fff;
+  width: 100%;
+  height: 100vh;
+}
+
+.already_account,
+.forget {
+  color: white;
+}
+
+/* ==========================sign up ========================= */
+.signup {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  border: 2px solid #6b21a8;
+}
+
+.form_control {
+  padding: 1.1rem .75rem !important;
+  font-size: 20px;
+}
+
+.already_account,
+.forget {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+/* Adjust styles for the university card upload button */
+input[type="file"] {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+/* ==========================home======================= */
+/* In your CSS file */
+
+.hero_section {
+  background-image: url('/public/images/home_bg.png');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 90vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero_content {
+  text-align: center;
+}
+
+.input-group {
+  max-width: 705px;
+  margin: 0 auto;
+}
+
+.form-control {
+  border-radius: 50px;
+  background: white;
+}
+
+.input-group-text {
+  border-radius: 50px;
+  background: white;
+}
+
+/* ============================about us====================== */
+.subheading {
+  margin-bottom: 20px;
+}
+
+.paragraph {
+  padding: 1rem 0;
+  margin-bottom: 20px;
+}
+/* ======================contact us ======================== */
+.contact-form-container .custom-input,
+.contact-form-container .custom-textarea {
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  padding: 0.75rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form-container .custom-input:focus,
+.contact-form-container .custom-textarea:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+  outline: none;
+}
+
+.contact-form-container .custom-textarea {
+  resize: none;
+}
+
+.contact-form-container .custom-button {
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-form-container .custom-button:hover {
+  background-color: var(--main-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* ========================dashboard=================== */
+.drawer_class {
+  width: 260px;
+}
+.flex-column {
+  flex-direction: column;
+}
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.upload-area {
+  width: 100%;
+  height: 250px;
+  border: 2px solid #6b21a8;
+  border-radius: 10px;
+  background-color: #E9E9E9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-text {
+  font-size: 1.5rem;
+  color: #6c757d;
+}
+/* ======================career counseling================== */
+.career_card{
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+/* ==========================footer=========================== */
+.footer {
+  background-color: var(--main-color);
+}
+.quick_link .quick_links{
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+.quick_link .quick_links:hover{
+  letter-spacing: 2px;
+  transition: all .3s ;
+}
+.social_icons {
+  display: flex;
+  padding-top: 20px;
+  text-align: center;
+  
+}
+
+.footer_social_links {
+  margin: 0 5px;
+  font-size: 18px;
+  color: var(--main-color);
+  background: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer_social_links:hover{
+  background-color: var(--main-color);
+  color: #fff;
+  transition: all .3s ;
+  border: 1px solid #fff;
+}
+@media (max-width:987) {
+  
+}
