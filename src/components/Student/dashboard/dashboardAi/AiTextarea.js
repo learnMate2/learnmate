@@ -5,7 +5,7 @@ import { IoIosArrowDroprightCircle } from "react-icons/io";
 const AiTextarea = () => {
   return (
     
-       <div>
+       <div style={{background:"#fff",padding:"16px",borderRadius:"10px"}}>
             <FloatingLabel controlId="floatingTextarea2" label="Ask a question">
               <Form.Control
                 as="textarea"

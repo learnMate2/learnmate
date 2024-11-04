@@ -27,7 +27,7 @@ const AiText = () => {
       {
         
         data.map((item,index)=>(
-            <Card style={{ width: '18rem',background:"transparent" }}>
+            <Card style={{ width: '20rem',background:"transparent",padding:"15px" }}>
             <Card.Body>
                 <div className='d-flex align-items-center'>
               <Card.Title style={{fontSize:"25px",color:"#6b21a8",paddingRight:"10px"}}>{item.icon}</Card.Title>

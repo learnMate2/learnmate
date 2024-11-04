@@ -1,9 +1,9 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row} from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 
-import image1 from '../../../images/upload_notes_1.jpg'; // Adjust the import path according to your project structure
-import image2 from '../../../images/upload_notes_2.jpg'; // Adjust the import path according to your project structure
+import image1 from '../../../../images/upload_notes_1.jpg'; // Adjust the import path according to your project structure
+import image2 from '../../../../images/upload_notes_2.jpg'; // Adjust the import path according to your project structure
 
 const notes = [
     {

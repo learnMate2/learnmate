@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import SideBar from './Sidebar'; // Adjust the path as needed
 import DashboardNavbar from './DashboardNavbar';
 import { LuDollarSign } from 'react-icons/lu';
-import "../../styles/styles.css"
+import "../../../styles/styles.css"
 
 const MyEarning = () => {
   const data = [
@@ -24,7 +24,7 @@ const MyEarning = () => {
   return (
     <>
       <DashboardNavbar />
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex' ,padding:"0 20px 0 70px"}}>
         <SideBar />
         <Container fluid>
           <h1 style={{ padding: "32px 20px" }}>Your Earnings</h1>

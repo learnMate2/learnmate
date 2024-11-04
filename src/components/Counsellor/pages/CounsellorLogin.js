@@ -1,13 +1,13 @@
 import React,{useState} from 'react';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import "../../styles/styles.css";
-import signupImage from "../../images/signup.jpg"
-import custom_axios from "../../components/connection/axios";
+import "../../../styles/styles.css";
+import signupImage from "../../../images/signup.jpg"
+import custom_axios from "../../../components/connection/axios";
 import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
-const LoginForm = () => {
+const CounsellorLogin = () => {
   const navigate = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,7 +15,7 @@ const LoginForm = () => {
     event.preventDefault();
     // Handle form submission
     try {
-      const response = await custom_axios.post('/api/v1/student/login', {
+      const response = await custom_axios.post('/api/v1/counsellor/login', {
         email,
         password  
       });
@@ -23,7 +23,7 @@ const LoginForm = () => {
 
       // Display a success toast
       toast.success(response.data.message || 'Successfully login!');
-      navigate("/dashboard/home")
+      navigate("/counsellor")
 
     } catch (error) {
       toast.error(error.response.data.message);
@@ -40,6 +40,8 @@ const LoginForm = () => {
               <div style={{ paddingBottom: '50px' }}>
                 <h1 className="text-center" style={{fontSize:"43px"}}>Login</h1>
                 <p className="text-center" style={{ color: "#999999",size:"15px", }}>Welcome Back! Please Enter your Details</p>
+                <p className="text-center" style={{ color: "#999999",size:"15px", }}>Login as a Counsellor</p>
+                
               </div>
               <Form onSubmit={handleSubmit} >
                 
@@ -90,4 +92,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default CounsellorLogin;

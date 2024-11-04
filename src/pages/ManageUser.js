@@ -1,9 +1,9 @@
 import React from 'react'
 import { Container } from 'react-bootstrap';
 
-import DashboardNavbar from '../components/dashboard/DashboardNavbar'
+import DashboardNavbar from '../components/Student/dashboard/DashboardNavbar'
 import SideBar from '../components/admin/layout/Sidebar'
-import User from "../components/admin/manageUser/Users"
+import User from "../components/admin/adminDashboard/Users"
 const ManageUser = () => {
     return (
         <div>

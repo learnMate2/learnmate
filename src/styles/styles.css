@@ -170,6 +170,14 @@ input[type="file"] {
 .career_card{
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
 }
+.counselingHeroSection{
+  background: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),url(../images/bg.jpg);
+  width: 100%;
+  height: 70vh;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+}
 /* ==========================footer=========================== */
 .footer {
   background-color: var(--main-color);
@@ -209,6 +217,8 @@ input[type="file"] {
   transition: all .3s ;
   border: 1px solid #fff;
 }
-@media (max-width:987) {
-  
-}
+
+
+
+
+

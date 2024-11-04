@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import { FaChevronLeft, FaChevronRight, FaHome, FaQuestionCircle, FaFolder, FaBook, FaBookOpen } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight, FaHome, FaFolder, FaBookOpen } from 'react-icons/fa';
 import { FaCircleDollarToSlot } from "react-icons/fa6";
 import { GrUserManager } from "react-icons/gr";
 import '../../../styles/styles.css';
@@ -14,12 +14,11 @@ const SideBar = () => {
   const handleToggle = () => setOpen(!open);
 
   const items = [
-    { text: 'Home', icon: <FaHome />, link: '/dashboard/home' },
-    { text: 'Books', icon: <FaBookOpen />, link: '/dashboard/books' },
-    { text: 'Courses', icon: <FaFolder />, link: '/dashboard/my-course' },
-    { text: 'My Earning', icon: <FaCircleDollarToSlot />, link: '/dashboard/earning' },
-    { text: 'Request a career counseling', icon: <GrUserManager />, link: '/dashboard/careercounseling' },
-    { text: 'Ask AI', icon: <FaQuestionCircle />, link: '/dashboard/ask-questions' },
+    { text: 'Home', icon: <FaHome />, link: '/admin/home' },
+    { text: 'Manage Users', icon: <FaBookOpen />, link: '/admin/manageuser' },
+    { text: 'Manage Ai', icon: <FaFolder />, link: '/dashboard/my-course' },
+    { text: 'Manage Logs', icon: <FaCircleDollarToSlot />, link: '/dashboard/earning' },
+    { text: 'Setting', icon: <GrUserManager />, link: '/dashboard/careercounseling' },
   ];
 
   return (

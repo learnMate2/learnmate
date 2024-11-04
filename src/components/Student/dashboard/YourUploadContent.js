@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Row, Col, Container } from 'react-bootstrap';
-import custom_axios from "../connection/axios"
+import { Container} from 'react-bootstrap';
+import SideBar from './Sidebar'; // Adjust the path as needed
+import DashboardNavbar from './DashboardNavbar';
+import custom_axios from "../../connection/axios"
+import { Row, Col, Card } from 'react-bootstrap';
 
-  
-
-
-const RecentlyUploadedNotes = () => {
+const YourUploadContent = () => {
   const [notes, setNotes] = useState([])
   useEffect(() => {
     const getNotes = async () => {
@@ -19,11 +19,15 @@ const RecentlyUploadedNotes = () => {
     }
     getNotes();
   }, [])
+
   return (
-    <Container className="my-5">
-      <h2 className="mb-4">Recently Uploaded Notes</h2>
-      <Row>
-      {notes.map((item, index) => (
+    <>
+      <DashboardNavbar />
+      <div style={{ display: 'flex',padding:"0 20px 0 70px"  }}>
+        <SideBar />
+        <Container fluid>
+          <Row className="m-2">
+            {notes.map((item, index) => (
               <Col xs={12} sm={12} md={6} lg={4} key={index} className="mb-4">
                 <Card style={{ border: "2px solid #6b21a8", padding: "20px 10px", marginTop: "30px" }} className='d-flex justify-content-center align-items-center career_card'>
                   <Card.Img variant="top" src={item.thumbnail} style={{ width: "130px", height: "130px", borderRadius: "50%" }} />
@@ -45,9 +49,11 @@ const RecentlyUploadedNotes = () => {
                 </Card>
               </Col>
             ))}
-      </Row>
-    </Container>
+          </Row>
+        </Container>
+      </div>
+    </>
   );
 };
 
-export default RecentlyUploadedNotes;
+export default YourUploadContent;

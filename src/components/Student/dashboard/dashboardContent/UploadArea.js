@@ -1,10 +1,7 @@
 // UploadArea.js
 import React from 'react';
 import {Container, Row, Col } from 'react-bootstrap';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-
-import "../../../styles/styles.css"
+import "../../../../styles/styles.css"
 const UploadArea = () => {
   return (
     <Container fluid className="upload-area mt-3">

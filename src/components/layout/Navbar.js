@@ -25,7 +25,7 @@ function HomeNavbar() {
             <Nav.Link href="/" style={{ color: '#fff' }}>Home</Nav.Link>
             <Nav.Link href="/about" style={{ color: '#fff' }}>About</Nav.Link>
             <Nav.Link href="/contact" style={{ color: '#fff' }}>Contact</Nav.Link>
-            <Nav.Link href="/hire" style={{ color: '#fff'}} id='Counselor'>Looking for Counselor?</Nav.Link>
+            <Nav.Link href="/hire/careercounseling" style={{ color: '#fff'}} id='Counselor'>Looking for Counselor?</Nav.Link>
           </Nav>
           <Nav>
             <Button variant="outline-light" href="/login" className="me-2 " style={{ padding: "8px 22px",borderRadius: "36px"}}>Login</Button>

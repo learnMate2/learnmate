@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col} from 'react-bootstrap';
+
 import SideBar from './Sidebar'; // Adjust the path as needed
 import DashboardNavbar from './DashboardNavbar';
 import UploadArea from './dashboardContent/UploadArea'; // Adjust the path as needed
@@ -7,10 +8,11 @@ import YourUploads from './dashboardContent/YourUploads'
 
 
 const Dashboard = () => {
+  
   return (
     <>
       <DashboardNavbar />
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex',padding:"0 20px 0 70px"   }}>
         <SideBar />
         <Container fluid style={{ paddingLeft: '0', paddingRight: '0', paddingTop: "20px" }}>
           <Row className="mt-3">

@@ -10,26 +10,27 @@ import { useNavigate } from 'react-router-dom';
 
 const SignupForm = () => {
   const navigate = useNavigate()
-
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [universityName, setUniversityName] = useState("");
   const [password, setPassword] = useState("");
+  const [profilePic, setProfilePic] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
       const response = await custom_axios.post('/api/v1/student/register', {
-        fullName,  
+        fullName,
         email,
         universityName,
-        password  
+        password,
+        profilePic
       });
       toast.success(response.data.message || 'Successfully registered!');
       navigate("/login");
     } catch (error) {
-      
+
       toast.error(error.response.data.message);
     }
   };
@@ -42,8 +43,9 @@ const SignupForm = () => {
             <Col xs={12} md={6} lg={4}>
               <div className="" style={{ borderRadius: '8px', width: "400px" }}>
                 <div style={{ paddingBottom: '20px' }}>
-                  <h1 className="text-center" style={{fontSize:"43px"}}>Create Your Account</h1>
-                  <p className="text-center" style={{ color: "#999999", size:"15px", }}>Welcome Back! Please Enter your Details</p>
+                  <Link to="/counsellorsignup" style={{color:"#6b21a8"}}>Register as a Counsellor</Link>
+                  <h1 className="text-center" style={{ fontSize: "43px" }}>Create Your Account</h1>
+                  <p className="text-center" style={{ color: "#999999", size: "15px", }}>Welcome Back! Please Enter your Details</p>
                 </div>
                 <Form onSubmit={handleSubmit}>
                   <Form.Group controlId="formFullName" className="mb-3">
@@ -61,6 +63,10 @@ const SignupForm = () => {
                   <Form.Group controlId="formUniversityName" className="mb-3">
                     <Form.Label>University Name</Form.Label>
                     <Form.Control type="text" placeholder="University Name" required className='form_control' value={universityName} onChange={(e) => { setUniversityName(e.target.value); }} />
+                  </Form.Group>
+                  <Form.Group controlId="formUniversityName" className="mb-3">
+                    <Form.Label>Upload Profile Picture</Form.Label>
+                    <Form.Control type="file" placeholder="University Name" required className='form_control' value={profilePic} onChange={(e) => { setProfilePic(e.target.value) }} />
                   </Form.Group>
                   <Button
                     type="submit"
@@ -100,3 +106,145 @@ const SignupForm = () => {
 };
 
 export default SignupForm;
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import { Container, Form, Button, Row, Col } from 'react-bootstrap';
+// import { Link } from 'react-router-dom';
+// import "../../styles/styles.css";
+// import signupImage from "../../images/signup.jpg";
+// import custom_axios from "../../components/connection/axios";
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+// import { useNavigate } from 'react-router-dom';
+
+// const SignupForm = () => {
+//   const navigate = useNavigate()
+//   const [fullName, setFullName] = useState("");
+//   const [email, setEmail] = useState("");
+//   const [universityName, setUniversityName] = useState("");
+//   const [password, setPassword] = useState("");
+//   const [profilePic, setProfilePic] = useState("");
+
+//   const handleSubmit = async (event) => {
+//     event.preventDefault();
+//     try {
+//       const response = await custom_axios.post('/api/v1/student/register', {
+//         fullName,
+//         email,
+//         universityName,
+//         password,
+//         profilePic
+//       });
+//       toast.success(response.data.message || 'Successfully registered!');
+//       navigate("/login");
+//     } catch (error) {
+//       toast.error(error.response.data.message);
+//     }
+//   };
+
+//   return (
+//     <div style={{ margin: "50px 0" }}>
+//       <Container className="signup d-flex justify-content-center align-items-center bg-white" style={{ width: "850px", height: "750px", padding: 0, borderRadius: '10px' }}>
+//         <Row className="g-0">
+//           <Col md={6} className="d-flex flex-column justify-content-center align-items-center p-4" style={{ background: "#6b21a8" }}>
+//             <h1 className="text-white" style={{ fontSize: "28px", marginBottom: "10px", textAlign: "center" }}>
+//               Welcome to LearnMate!
+//             </h1>
+//             <p className="text-white text-center" style={{ fontSize: "14px", marginBottom: "20px" }}>
+//               Join us to help students all around the world!
+//             </p>
+//             <img src={signupImage} alt="sign up" style={{ width: "100%", borderRadius: "8px" }} />
+//           </Col>
+//           <Col md={6} className="p-4">
+//             <div style={{ textAlign: "center", marginBottom: "20px" }}>
+//               <Link to="/counsellorsignup" style={{ color: "#6b21a8", fontWeight: "bold" }}>Register as a Counsellor</Link>
+//               <h2 style={{ fontSize: "26px", margin: "20px 0" }}>Create Your Account</h2>
+//             </div>
+//             <Form onSubmit={handleSubmit}>
+//               <Form.Group className="mb-3">
+//                 <Form.Control
+//                   type="text"
+//                   placeholder="Full Name"
+//                   required
+//                   className="form_control"
+//                   value={fullName}
+//                   onChange={(e) => setFullName(e.target.value)}
+//                 />
+//               </Form.Group>
+//               <Form.Group className="mb-3">
+//                 <Form.Control
+//                   type="email"
+//                   placeholder="Email Address"
+//                   required
+//                   className="form_control"
+//                   value={email}
+//                   onChange={(e) => setEmail(e.target.value)}
+//                 />
+//               </Form.Group>
+//               <Form.Group className="mb-3">
+//                 <Form.Control
+//                   type="password"
+//                   placeholder="Password"
+//                   required
+//                   className="form_control"
+//                   value={password}
+//                   onChange={(e) => setPassword(e.target.value)}
+//                 />
+//               </Form.Group>
+//               <Form.Group className="mb-3">
+//                 <Form.Control
+//                   type="text"
+//                   placeholder="University Name"
+//                   required
+//                   className="form_control"
+//                   value={universityName}
+//                   onChange={(e) => setUniversityName(e.target.value)}
+//                 />
+//               </Form.Group>
+//               <Form.Group className="mb-3">
+//                 <Form.Control
+//                   type="file"
+//                   className="form_control"
+//                   onChange={(e) => setProfilePic(e.target.files[0])}
+//                 />
+//               </Form.Group>
+//               <Button
+//                 type="submit"
+//                 variant="light"
+//                 className="w-100 mb-3"
+//                 style={{
+//                   background: "#6b21a8",
+//                   color: "#fff",
+//                   padding: "10px 0",
+//                   marginTop: "10px",
+//                   fontWeight: "bold"
+//                 }}
+//               >
+//                 SIGN UP
+//               </Button>
+//               <p style={{ textAlign: "center", marginTop: "10px" }}>
+//                 Already have an account? <Link to="/login" className='already_account'>Click Here</Link>
+//               </p>
+//             </Form>
+//           </Col>
+//         </Row>
+//       </Container>
+//       <ToastContainer />
+//     </div>
+//   );
+// };
+
+// export default SignupForm;
+

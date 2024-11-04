@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from "../layout/Navbar";
 import Sidebar from '../layout/Sidebar';
 import { Container } from 'react-bootstrap';
+import AdminHome from './AdminHome';
 const AdminDashboard = () => {
   return (
     <>
@@ -9,7 +10,7 @@ const AdminDashboard = () => {
       <div className='d-flex'>
         <Sidebar />
         <Container fluid>
-          <h1>Admin dashboard</h1>
+          <AdminHome/>
         </Container>
       </div>
     </>
