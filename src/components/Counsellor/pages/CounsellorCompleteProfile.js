@@ -20,7 +20,6 @@ const CounsellorCompleteProfile = () => {
   const [uploading, setUploading] = useState(false);
 
   const handleChange = (e) => {
-console.log(e.target.name,'----')
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -139,7 +138,6 @@ console.log(e.target.name,'----')
   };
 
   const handleSubmit = async (e) => {
-    console.log(formData,"formdata")
     e.preventDefault();
     setUploading(true);
 
@@ -147,7 +145,6 @@ console.log(e.target.name,'----')
     data.append("field", formData.field);
     data.append("profession", formData.profession);
     data.append("about", formData.about);
-    data.append("activeDays", formData.activeDays);
     formData.experiences.forEach((exp, idx) => {
       data.append(`experiences[${idx}][company]`, exp.company);
       data.append(`experiences[${idx}][designation]`, exp.designation);
@@ -410,6 +407,13 @@ console.log(e.target.name,'----')
 }
 
 export default CounsellorCompleteProfile;
+
+// admin
+
+// home
+// counsellor request   -> send respose | accept
+
+// setting ->password change
 
 // admin
 

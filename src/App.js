@@ -25,12 +25,14 @@ import ManageUser from './pages/ManageUser';
 import YourUploadContent from './components/Student/dashboard/YourUploadContent';
 import CareerCounselingPage from "./pages/CareerCounselingPage"
 import CounsellorSignUp from "./components/Counsellor/pages/CounsellorSignUp"
-import CounselorProfile from "./components/careerCounselingPage/CounselorProfile"
+import CounselorProfile from "./components/Counsellor/pages/CounselorProfile"
 import CounsellorHome from './components/Counsellor/pages/CounsellorHome';
 import CounsellorCompleteProfile from './components/Counsellor/pages/CounsellorCompleteProfile';
 import CounsellorLogin from './components/Counsellor/pages/CounsellorLogin';
 import CounsellorRequestedMeeting from "./components/Counsellor/pages/CounsellorRequestedMeeting"
 import CounsellorScheduleMeeting from './components/Counsellor/pages/CounsellorScheduleMeeting';
+import ProtectedRoutes from './components/protectedRoutes/ProtectedRoutes';
+import CounsellorResponse from './components/Counsellor/pages/CounsellorResponse';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -42,7 +44,7 @@ const App = () => {
     { path: "/signup", element: <Signup /> },
     { path: "/logout", element: <Signup /> },
     { path: "*", element: <Notfound /> },
-    { path: "/dashboard", element: <DashboardHome /> },
+    { path: "/dashboard", element: <ProtectedRoutes><DashboardHome /></ProtectedRoutes> },
     { path: "/dashboard/home", element: <DashboardHome /> },
     { path: "/dashboard/ask-questions", element: <AskAi /> },
     { path: "/dashboard/requestedmeeting", element: <RequestedMeeting /> },
@@ -61,6 +63,7 @@ const App = () => {
     {path: "/counsellor", element: < CounsellorHome/>},
     {path: "/counsellor/CounsellorCompleteProfile", element: < CounsellorCompleteProfile/>},
     {path: "/counsellor/allMeetingRequests", element: < CounsellorRequestedMeeting/>},
+    {path: "/counsellor/allMeetingRequests/response/:id", element: < CounsellorResponse/>},
     {path: "/counsellor/scheduledMeeting", element: < CounsellorScheduleMeeting/>},
 
 

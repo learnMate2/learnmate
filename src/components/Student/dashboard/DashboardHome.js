@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container, Row, Col} from 'react-bootstrap';
 
-import SideBar from './Sidebar'; // Adjust the path as needed
+import SideBar from './Sidebar'; 
 import DashboardNavbar from './DashboardNavbar';
-import UploadArea from './dashboardContent/UploadArea'; // Adjust the path as needed
+import UploadArea from './dashboardContent/UploadArea'; 
 import YourUploads from './dashboardContent/YourUploads'
 
 

@@ -6,14 +6,12 @@ import '../../../styles/styles.css';
 import { CgProfile } from "react-icons/cg";
 import { AiOutlineSchedule } from "react-icons/ai";
 import { BsPersonBoundingBox } from "react-icons/bs";
-
-
 import sidebarBox from '../../../images/sidebar_box.png';
 import custom_axios from "../../connection/axios";
 
 const CounsellorSideBar = () => {
   const [profile, setProfile] = useState(null);
-  const [open, setOpen] = useState(false); // Initial state as closed
+  const [open, setOpen] = useState(false); 
 
   useEffect(() => {
     const getProfileData = async () => {

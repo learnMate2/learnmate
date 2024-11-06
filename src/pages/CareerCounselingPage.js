@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout/Layout'
-import CounselingHeroSection from '../components/careerCounselingPage/CounselingHeroSection'
+import CounselingHeroSection from '../components/Counsellor/pages/CounselingHeroSection'
 
 const Contact = () => {
   return (

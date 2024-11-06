@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import custom_axios from '../connection/axios';
+import custom_axios from '../../connection/axios';
 import { useParams } from 'react-router-dom';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
-import SideBar from '../Student/dashboard/Sidebar'; 
-import DashboardNavbar from '../Student/dashboard/DashboardNavbar';
+import SideBar from '../../Student/dashboard/Sidebar'; 
+import DashboardNavbar from '../../Student/dashboard/DashboardNavbar';
 
 const CounselorProfile = () => {
   const { id } = useParams();
@@ -16,7 +16,6 @@ const CounselorProfile = () => {
     };
     getCounselor();
   }, [id]);
-
   const [proposedTime, setProposedTime] = useState('');
   const handleChange = (e) => {
     setProposedTime(e.target.value);
@@ -25,8 +24,7 @@ const CounselorProfile = () => {
   const meetingSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await custom_axios.post(`api/v1/student/requestForMeeting/${id}`, { proposedTime });
-      
+      await custom_axios.post(`api/v1/student/requestForMeeting/${id}`, { proposedTime });
     } catch (error) {
       console.log(error);
     }
@@ -67,7 +65,6 @@ const CounselorProfile = () => {
                     <p><strong>Updated At:</strong> {new Date(counsellorById.updatedAt).toLocaleString()}</p>
                   </Col>
                 </Row>
-
                 <Row className="mt-4">
                   <Col>
                     <h4 style={{ color: '#6b21a8' }}>Experiences</h4>
@@ -81,7 +78,7 @@ const CounselorProfile = () => {
                       </Card>
                     ))}
                   </Col>
-                </Row>
+                </Row> 
 
                 <Row className="mt-4">
                   <Col>

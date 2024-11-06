@@ -28,6 +28,7 @@ const CounsellorScheduleMeeting = () => {
           <h1>Counsellor Schedule Meeting</h1>
           <Row className="m-2">
             {
+            counsellorScheduleMeeting.length>0?(
               counsellorScheduleMeeting.map((item, index) => (
                 <Col xs={12} sm={12} md={6} lg={4} key={index} className="mb-4">
                   <Card style={{ border: "2px solid #6b21a8", padding: "20px 10px", marginTop: "30px" }} className='d-flex justify-content-center align-items-center career_card'>
@@ -45,6 +46,9 @@ const CounsellorScheduleMeeting = () => {
                   </Card>
                 </Col>
               ))
+            ):(
+              <p style={{textAlign:"center",fontSize:"20px",paddingTop:"20px"}}>No Schedule meetings available</p>
+            )
             }
           </Row>
 

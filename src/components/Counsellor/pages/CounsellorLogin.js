@@ -13,7 +13,7 @@ const CounsellorLogin = () => {
   const [password, setPassword] = useState("");
   const handleSubmit = async(event) => {
     event.preventDefault();
-    // Handle form submission
+    
     try {
       const response = await custom_axios.post('/api/v1/counsellor/login', {
         email,
@@ -21,13 +21,13 @@ const CounsellorLogin = () => {
       });
       console.log(response.data.message);
 
-      // Display a success toast
+    
       toast.success(response.data.message || 'Successfully login!');
       navigate("/counsellor")
 
     } catch (error) {
       toast.error(error.response.data.message);
-      // console.log(error)
+  
     }
   };
   return (

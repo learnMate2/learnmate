@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
-import SideBar from './Sidebar'; // Adjust the path as needed
+import SideBar from './Sidebar'; 
 import DashboardNavbar from './DashboardNavbar';
 import { LuDollarSign } from 'react-icons/lu';
 import "../../../styles/styles.css"

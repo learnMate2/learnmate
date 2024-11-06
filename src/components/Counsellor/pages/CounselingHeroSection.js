@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import custom_axios from '../connection/axios';
-import "../../styles/styles.css";
+import { useNavigate } from 'react-router-dom'; 
+import custom_axios from '../../connection/axios';
+import "../../../styles/styles.css";
 
 const CounselingHeroSection = () => {
   const [counsellor, setCounsellor] = useState([]);
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const getCounselor = async () => {
@@ -22,11 +22,11 @@ const CounselingHeroSection = () => {
   }, []);
 
   const handleContactClick = (counselorId) => {
-    const isLoggedIn = !!localStorage.getItem('accessToken'); // Check for token in localStorage
+    const isLoggedIn = !!localStorage.getItem('accessToken'); 
     if (isLoggedIn) {
-      navigate(`/counselorprofile/${counselorId}`); // Navigate to counselor profile if logged in
+      navigate(`/counselorprofile/${counselorId}`);
     } else {
-      navigate('/signup'); // Navigate to sign-up page if not logged in
+      navigate('/signup'); 
     }
   };
 
@@ -34,7 +34,7 @@ const CounselingHeroSection = () => {
     <>
       <div className='counselingHeroSection' style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", textAlign: "center" }}>
         <div>
-          <h1>Find Career Counselors</h1>
+          <h1>Find Career Counselors</h1> 
           <h3>Browse Career Counseling Jobs Online</h3>
           <p>Guru helps you connect with quality Employers to find freelance jobs that match your skills.</p>
         </div>
@@ -61,7 +61,7 @@ const CounselingHeroSection = () => {
                   </Card.Text>
                   <Button 
                     style={{ padding: "10px 20px", background: "#6b21a8", border: "none" }} 
-                    onClick={() => handleContactClick(item._id)} // Handle button click
+                    onClick={() => handleContactClick(item._id)} 
                   >
                     Contact me
                   </Button>

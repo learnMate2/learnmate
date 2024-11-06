@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import SideBar from './Sidebar'; // Adjust the path as needed
+import SideBar from './Sidebar';
 import DashboardNavbar from './DashboardNavbar'
 const Notes = () => {
   return (

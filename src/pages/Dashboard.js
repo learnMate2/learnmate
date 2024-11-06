@@ -1,6 +1,6 @@
 
 import React from 'react';
-import SideBar from '../components/dashboard/Sidebar'; // Adjust the path as needed
+import SideBar from '../components/dashboard/Sidebar'; 
 import DashboardNavbar from '../components/dashboard/DashboardNavbar'
 const Dashboard = () => {
   return (

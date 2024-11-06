@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import SideBar from './Sidebar'; // Adjust the path as needed
+import SideBar from './Sidebar'; 
 import DashboardNavbar from './DashboardNavbar'
 import AiTextarea from "../dashboard/dashboardAi/AiTextarea"
 import AiText from './dashboardAi/AiText';

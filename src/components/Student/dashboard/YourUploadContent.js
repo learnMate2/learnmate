@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container} from 'react-bootstrap';
-import SideBar from './Sidebar'; // Adjust the path as needed
+import SideBar from './Sidebar'; 
 import DashboardNavbar from './DashboardNavbar';
 import custom_axios from "../../connection/axios"
 import { Row, Col, Card } from 'react-bootstrap';
