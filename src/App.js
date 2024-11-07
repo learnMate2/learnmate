@@ -33,6 +33,9 @@ import CounsellorRequestedMeeting from "./components/Counsellor/pages/Counsellor
 import CounsellorScheduleMeeting from './components/Counsellor/pages/CounsellorScheduleMeeting';
 import ProtectedRoutes from './components/protectedRoutes/ProtectedRoutes';
 import CounsellorResponse from './components/Counsellor/pages/CounsellorResponse';
+import CounsellorUpdate from './components/Counsellor/pages/CounsellorUpdate';
+import Forgot from './components/Student/dashboard/Forgot';
+import Reset from './components/Student/dashboard/Reset';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -65,6 +68,9 @@ const App = () => {
     {path: "/counsellor/allMeetingRequests", element: < CounsellorRequestedMeeting/>},
     {path: "/counsellor/allMeetingRequests/response/:id", element: < CounsellorResponse/>},
     {path: "/counsellor/scheduledMeeting", element: < CounsellorScheduleMeeting/>},
+    {path: "/counsellor/update", element: < CounsellorUpdate/>},
+    {path: "/forgot-password", element: < Forgot/>},
+    {path: "/reset-password", element: < Reset/>},
 
 
   ])

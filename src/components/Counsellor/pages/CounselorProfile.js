@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import custom_axios from '../../connection/axios';
 import { useParams } from 'react-router-dom';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
-import SideBar from '../../Student/dashboard/Sidebar'; 
+import SideBar from '../../Student/dashboard/Sidebar';
 import DashboardNavbar from '../../Student/dashboard/DashboardNavbar';
 
 const CounselorProfile = () => {
@@ -24,7 +24,8 @@ const CounselorProfile = () => {
   const meetingSubmit = async (e) => {
     e.preventDefault();
     try {
-      await custom_axios.post(`api/v1/student/requestForMeeting/${id}`, { proposedTime });
+      const res=await custom_axios.post(`api/v1/student/requestForMeeting/${id}`, { proposedTime });
+      console.log(res.data,"================= ")
     } catch (error) {
       console.log(error);
     }
@@ -48,7 +49,7 @@ const CounselorProfile = () => {
 
                 <Row>
                   <Col md={4} >
-                    
+
                     <img src={counsellorById.profilePic} alt="Counselor Profile" className="img-fluid rounded-circle mb-3" style={{ width: '150px', height: '150px' }} />
                     <h3 style={{ color: '#6b21a8' }}>{counsellorById.fullName}</h3>
                     <p><strong>Profession:</strong> {counsellorById.profession}</p>
@@ -78,7 +79,7 @@ const CounselorProfile = () => {
                       </Card>
                     ))}
                   </Col>
-                </Row> 
+                </Row>
 
                 <Row className="mt-4">
                   <Col>
