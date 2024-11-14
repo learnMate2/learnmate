@@ -54,7 +54,7 @@ const CounsellorLogin = () => {
                   <Form.Control type="password" placeholder="Password" required className='form_control' value={password} onChange={(e) => { setPassword(e.target.value); }}/>
                 </Form.Group>
                 <div className="mb-3 ">
-                <Link to="/forget" className='forget' >Forget Password</Link>
+                <Link to="/forgot-password" className='forget' >Forget Password</Link>
               </div>
                 
                 <Button

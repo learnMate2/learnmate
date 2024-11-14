@@ -34,7 +34,7 @@ const CounsellorScheduleMeeting = () => {
                   <Card style={{ border: "2px solid #6b21a8", padding: "20px 10px", marginTop: "30px" }} className='d-flex justify-content-center align-items-center career_card'>
                     <Card.Body className='text-center'>
                       <Card.Title style={{ fontSize: "29px" }}>
-                        {item.student}
+                        {item.student.fullName}
                       </Card.Title>
                       <Card.Text>
                         {item.proposedTime}

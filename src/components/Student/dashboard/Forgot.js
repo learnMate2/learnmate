@@ -1,23 +1,21 @@
 import React, { useState } from 'react';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import "../../styles/styles.css";
-import signupImage from "../../images/signup.jpg"
-import custom_axios from "../../components/connection/axios";
+import "../../../styles/styles.css";
+import signupImage from "../../../images/signup.jpg"
+import custom_axios from "../../../components/connection/axios";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
-const LoginForm = () => {
+const Forgot = () => {
   const navigate = useNavigate()
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await custom_axios.post('/api/v1/student/login', {
+      const response = await custom_axios.post('/api/v1/auth/requestPasswordReset', {
         email,
-        password
       });
       console.log(response.data.message);
 
@@ -37,7 +35,7 @@ const LoginForm = () => {
             <Col xs={12} md={6} lg={4}>
               <div className="" style={{ borderRadius: '8px', width: "400px" }}>
                 <div style={{ paddingBottom: '50px' }}>
-                  <h1 className="text-center" style={{ fontSize: "43px" }}>Login</h1>
+                  <h1 className="text-center" style={{ fontSize: "43px" }}>Forgot Password</h1>
                   <p className="text-center" style={{ color: "#999999", size: "15px", }}>Welcome Back! Please Enter your Details</p>
                 </div>
                 <Form onSubmit={handleSubmit} >
@@ -46,13 +44,6 @@ const LoginForm = () => {
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" placeholder="Email" required className='form_control' value={email} onChange={(e) => { setEmail(e.target.value); }} />
                   </Form.Group>
-                  <Form.Group controlId="formPassword" className="mb-3">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" required className='form_control' value={password} onChange={(e) => { setPassword(e.target.value); }} />
-                  </Form.Group>
-                  <div className="mb-3 ">
-                    <Link to="/forgot-password" className='forget' >Forget Password</Link>
-                  </div>
 
                   <Button
                     type="submit"
@@ -66,11 +57,8 @@ const LoginForm = () => {
                       '&:hover': { background: '#fff', color: "#6b21a8" }
                     }}
                   >
-                    Login
+                    Submit
                   </Button>
-                  <div>
-                    <p>Create new account. <Link to="/signup" className='already_account' >Click Here</Link></p>
-                  </div>
                 </Form>
               </div>
             </Col>
@@ -89,4 +77,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default Forgot;
