@@ -3,7 +3,7 @@ import { Navbar, Container } from 'react-bootstrap';
 import profile from '../../../images/profile.png'
 import '../../../styles/styles.css'
 import logo2 from '../../../images/logo2.png'
-export default function DashboardNavbar() {
+export default function AdminNavbar() {
   return (
 
     <Navbar className="bg-body-tertiary" id="dashboardNav">

@@ -20,8 +20,7 @@ import ScheduleMeeting from './components/Student/dashboard/ScheduleMeeting';
 import CareerCounseling from './components/Student/dashboard/CareerCounseling';
 import Admin from './pages/Admin';
 import UploadContent from './components/Student/dashboard/dashboardContent/UploadContent';
-import AdminDashboard from './components/admin/adminDashboard/AdminDashboard';
-import ManageUser from './pages/ManageUser';
+
 import YourUploadContent from './components/Student/dashboard/YourUploadContent';
 import CareerCounselingPage from "./pages/CareerCounselingPage"
 import CounsellorSignUp from "./components/Counsellor/pages/CounsellorSignUp"
@@ -36,6 +35,10 @@ import CounsellorResponse from './components/Counsellor/pages/CounsellorResponse
 import CounsellorUpdate from './components/Counsellor/pages/CounsellorUpdate';
 import Forgot from './components/Student/dashboard/Forgot';
 import Reset from './components/Student/dashboard/Reset';
+import AdminSignup from './components/admin/pages/AdminSignup';
+import AdminLogin from './components/admin/pages/AdminLogin';
+import AdminCounsellor from './components/admin/pages/AdminCounsellor';
+import AdminApproveCounsellor from './components/admin/pages/AdminApproveCounsellor';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -56,8 +59,6 @@ const App = () => {
     { path: "/dashboard/schedulemeeting", element: <ScheduleMeeting /> },
     { path: "/admin", element: <Admin /> },
     { path: "/dashboard/uploadcontent", element: <UploadContent /> },
-    { path: "/admin/home", element: <AdminDashboard /> },
-    { path: "/admin/manageuser", element: <ManageUser /> },
     { path: "/hire/careercounseling", element: <CareerCounselingPage /> },
     { path: "/dashboard/youruploadcontent", element: <YourUploadContent /> }, 
     // --------------------
@@ -71,6 +72,11 @@ const App = () => {
     {path: "/counsellor/update", element: < CounsellorUpdate/>},
     {path: "/forgot-password", element: < Forgot/>},
     {path: "/reset-password", element: < Reset/>},
+    //----------
+    {path: "/admin/register", element: < AdminSignup/>},
+    {path:"/admin/login",element:<AdminLogin/>},
+    {path:"/admin/counsellor",element:<AdminCounsellor/>},
+    {path:"/admin/approve-counsellor/:id",element:<AdminApproveCounsellor/>}
 
 
   ])

@@ -1,10 +1,10 @@
 import React from 'react'
-import AdminDashboard from '../components/admin/adminDashboard/AdminDashboard'
+import AdminHome from '../components/admin/pages/AdminHome'
 
 const Admin = () => {
   return (
     <div>
-        <AdminDashboard/>
+        <AdminHome/>
     </div>
   )
 }

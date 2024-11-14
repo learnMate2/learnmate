@@ -8,15 +8,14 @@ import '../../../styles/styles.css';
 import sidebarBox from '../../../images/sidebar_box.png';
 import Profile2 from '../../../images/profile_2.png';
 
-const SideBar = () => {
+const AdminSideBar = () => {
   const [open, setOpen] = useState(true);
-
   const handleToggle = () => setOpen(!open);
 
   const items = [
     { text: 'Home', icon: <FaHome />, link: '/admin/home' },
     { text: 'Manage Users', icon: <FaBookOpen />, link: '/admin/manageuser' },
-    { text: 'Manage Ai', icon: <FaFolder />, link: '/dashboard/my-course' },
+    { text: 'Manage Counsellors', icon: <FaFolder />, link: '/admin/counsellor' },
     { text: 'Manage Logs', icon: <FaCircleDollarToSlot />, link: '/dashboard/earning' },
     { text: 'Setting', icon: <GrUserManager />, link: '/dashboard/careercounseling' },
   ];
@@ -29,6 +28,7 @@ const SideBar = () => {
             {open ? <FaChevronLeft /> : <FaChevronRight />}
           </Button>
         </Container>
+        
         <Nav className="flex-column mt-3" style={{ width: open ? '300px' : 'auto', fontSize: "20px" }}>
           {open && (
             <div style={{ position: "relative", marginLeft: "10px", marginBottom: "10px" }}>
@@ -59,4 +59,4 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default AdminSideBar;
