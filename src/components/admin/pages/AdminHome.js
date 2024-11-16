@@ -7,6 +7,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import custom_axios from '../../connection/axios';
+import AdminNavbar from '../layout/AdminNavbar';
+import AdminSideBar from '../layout/AdminSidebar';
 
 const AdminHome = () => {
     const [data, setData] = useState(null);
@@ -31,7 +33,11 @@ const AdminHome = () => {
     }
 
     return (
-        <Container className="mt-4">
+        <>
+        <AdminNavbar/>
+        <div style={{display:"flex"}}>
+            <AdminSideBar/>
+            <Container className="mt-4">
             <Row className="g-4">
                 <Col xs={12} sm={6} md={4} lg={4} className="d-flex justify-content-center">
                     <Card style={{ width: '22rem', textAlign: 'center', padding: '20px', boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)' }}>
@@ -68,6 +74,8 @@ const AdminHome = () => {
                 </Col>
             </Row>
         </Container>
+        </div>
+        </>
     );
 };
 

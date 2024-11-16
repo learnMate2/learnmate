@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import SideBar from './Sidebar';
-import DashboardNavbar from './DashboardNavbar';
+import SideBar from './StudentSidebar';
+import DashboardNavbar from './StudentNavbar';
 import custom_axios from "../../connection/axios";
 import { Container, Card, Col, Row, Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';

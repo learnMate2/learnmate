@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import SideBar from './Sidebar'; 
-import DashboardNavbar from './DashboardNavbar'
+import SideBar from './StudentSidebar'; 
+import DashboardNavbar from './StudentNavbar'
 import AiTextarea from "../dashboard/dashboardAi/AiTextarea"
 import AiText from './dashboardAi/AiText';
 const AskAi = () => {

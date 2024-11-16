@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
-import SideBar from './Sidebar'; 
-import DashboardNavbar from './DashboardNavbar';
+import SideBar from './StudentSidebar'; 
+import DashboardNavbar from './StudentNavbar';
 import { LuDollarSign } from 'react-icons/lu';
 import "../../../styles/styles.css"
 

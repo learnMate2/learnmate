@@ -29,7 +29,7 @@ const AdminCounsellor = () => {
           <Row className="mt-4">
             {counsellors.map((counsellor) => (
               <Col xs={12} sm={6} md={4} lg={3} key={counsellor._id} className="mb-4">
-                <Card style={{ textAlign: 'center', padding: '20px', boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',width:"300px" }}>
+                <Card style={{ textAlign: 'center', padding: '20px', boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.3)',width:"300px",border:"none" }}>
                   <Card.Img
                     variant="top"
                     src={counsellor.profilePic}

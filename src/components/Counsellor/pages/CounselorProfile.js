@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import custom_axios from '../../connection/axios';
 import { useParams } from 'react-router-dom';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
-import SideBar from '../../Student/dashboard/Sidebar';
-import DashboardNavbar from '../../Student/dashboard/DashboardNavbar';
+import SideBar from '../../Student/dashboard/StudentSidebar';
+import DashboardNavbar from '../../Student/dashboard/StudentNavbar';
 
 const CounselorProfile = () => {
   const { id } = useParams();

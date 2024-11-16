@@ -6,8 +6,8 @@ import custom_axios from "../../../../components/connection/axios";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "../../../../styles/styles.css";
-import DashboardNavbar from '../DashboardNavbar';
-import Sidebar from "../Sidebar";
+import DashboardNavbar from '../StudentNavbar';
+import Sidebar from "../StudentSidebar";
 
 const UploadContent = () => {
   const [title, setTitle] = useState("");

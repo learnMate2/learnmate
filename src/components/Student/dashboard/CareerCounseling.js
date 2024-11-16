@@ -1,7 +1,7 @@
 import React from 'react';
-import SideBar from './Sidebar'; 
+import SideBar from './StudentSidebar'; 
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
-import DashboardNavbar from './DashboardNavbar'
+import DashboardNavbar from './StudentNavbar'
 import "../../../styles/styles.css"
 import Footer from '../../layout/Footer'
 import  { useEffect,useState } from 'react';

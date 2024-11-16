@@ -1,10 +1,9 @@
 import React from 'react';
 import { Container, Row, Col} from 'react-bootstrap';
 
-import SideBar from './Sidebar'; 
-import DashboardNavbar from './DashboardNavbar';
+import SideBar from './StudentSidebar'; 
+import DashboardNavbar from './StudentNavbar';
 import UploadArea from './dashboardContent/UploadArea'; 
-import YourUploads from './dashboardContent/YourUploads'
 
 
 const Dashboard = () => {
@@ -21,11 +20,6 @@ const Dashboard = () => {
           <Row className="mt-2" style={{ padding: "0 40px" }}>
             <Col>
               <UploadArea />
-            </Col>
-          </Row>
-          <Row className="mt-2" style={{ padding: "0 40px" }}>
-            <Col>
-              <YourUploads />
             </Col>
           </Row>
         </Container>

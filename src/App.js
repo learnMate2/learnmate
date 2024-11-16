@@ -20,7 +20,6 @@ import ScheduleMeeting from './components/Student/dashboard/ScheduleMeeting';
 import CareerCounseling from './components/Student/dashboard/CareerCounseling';
 import Admin from './pages/Admin';
 import UploadContent from './components/Student/dashboard/dashboardContent/UploadContent';
-
 import YourUploadContent from './components/Student/dashboard/YourUploadContent';
 import CareerCounselingPage from "./pages/CareerCounselingPage"
 import CounsellorSignUp from "./components/Counsellor/pages/CounsellorSignUp"
@@ -42,6 +41,7 @@ import AdminApproveCounsellor from './components/admin/pages/AdminApproveCounsel
 
 const App = () => {
   const router = createBrowserRouter([
+    //----------------students----------------------
     { path: "/", element: <Home /> },
     { path: "/about", element: <About /> },
     { path: "/contact", element: <Contact /> },
@@ -57,11 +57,10 @@ const App = () => {
     { path: "/dashboard/earning", element: <MyEarning /> },
     { path: "/dashboard/careercounseling", element: <CareerCounseling /> },
     { path: "/dashboard/schedulemeeting", element: <ScheduleMeeting /> },
-    { path: "/admin", element: <Admin /> },
     { path: "/dashboard/uploadcontent", element: <UploadContent /> },
     { path: "/hire/careercounseling", element: <CareerCounselingPage /> },
     { path: "/dashboard/youruploadcontent", element: <YourUploadContent /> }, 
-    // --------------------
+    //----------------Counsellor----------------------
     { path: "/counsellor/signup", element: < CounsellorSignUp/> },
     {path: "/counselorprofile/:id", element: < CounselorProfile/>},
     {path: "/counsellor", element: < CounsellorHome/>},
@@ -72,7 +71,9 @@ const App = () => {
     {path: "/counsellor/update", element: < CounsellorUpdate/>},
     {path: "/forgot-password", element: < Forgot/>},
     {path: "/reset-password", element: < Reset/>},
-    //----------
+    //----------------Admin----------------------
+    { path: "/admin", element: <Admin /> },
+    { path: "/admin/home", element: <Admin /> },
     {path: "/admin/register", element: < AdminSignup/>},
     {path:"/admin/login",element:<AdminLogin/>},
     {path:"/admin/counsellor",element:<AdminCounsellor/>},

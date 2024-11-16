@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container} from 'react-bootstrap';
-import SideBar from './Sidebar'; 
-import DashboardNavbar from './DashboardNavbar';
+import SideBar from './StudentSidebar'; 
+import DashboardNavbar from './StudentNavbar';
 import custom_axios from "../../connection/axios"
 import { Row, Col, Card } from 'react-bootstrap';
 
