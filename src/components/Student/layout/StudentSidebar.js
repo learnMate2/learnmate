@@ -35,7 +35,7 @@ const StudentSideBar = () => {
     { text: 'Schedule Meeting', icon: <AiOutlineSchedule />, link: '/student/schedulemeeting' },
     { text: 'Requested Meeting', icon: <BsPersonBoundingBox />, link: '/student/requestedmeeting' },
     { text: 'Your Uploads', icon: <FaFolder />, link: '/student/youruploadcontent' },
-    { text: 'My Earning', icon: <FaCircleDollarToSlot />, link: '/student/earning' },
+    { text: 'Manage Subscriptions', icon: <FaCircleDollarToSlot />, link: '/PricingSection' },
     { text: 'Request a career counseling', icon: <GrUserManager />, link: '/student/careercounseling' },
   
   ];

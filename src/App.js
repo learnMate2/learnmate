@@ -38,6 +38,8 @@ import StudentHome from "./components/Student/pages/StudentHome";
 import AdminSetting from "./components/admin/pages/AdminSetting";
 import StudentCounselorProfile from "./components/Student/pages/SudentCounsellorProfile";
 import ListAllCounsellors from "./components/admin/pages/ListAllCounsellors";
+import StripeSuccess from './components/stripe/StripeSuccess'
+import PricingSection from "./components/stripe/PricingSection";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -48,6 +50,7 @@ const App = () => {
     { path: "/login", element: <Login /> },
     { path: "/signup", element: <Signup /> },
     { path: "/logout", element: <Signup /> },
+    {path:'/PricingSection',element:<PricingSection/>},
     { path: "*", element: <Notfound /> },
     {
       path: "/dashboard",
@@ -238,6 +241,10 @@ const App = () => {
           <AdminSetting />
         </ProtectedRoutes>
       ),
+    },
+    {
+      path: "/stripe/success",
+      element: <StripeSuccess/>
     },
   ]);
 
