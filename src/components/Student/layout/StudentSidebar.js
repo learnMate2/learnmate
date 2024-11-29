@@ -1,16 +1,18 @@
-import {  FaFolder, FaBookOpen } from 'react-icons/fa';
-import { FaCircleDollarToSlot } from "react-icons/fa6";
-import { GrUserManager } from "react-icons/gr";
 import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import { FaChevronLeft, FaChevronRight, FaHome} from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight, FaHome, FaQuestionCircle, FaFolder } from 'react-icons/fa';
+import { FaCircleDollarToSlot } from "react-icons/fa6";
+import { BsPersonBoundingBox } from "react-icons/bs";
+import { GrUserManager } from "react-icons/gr";
+import { AiOutlineSchedule } from "react-icons/ai";
+
 import '../../../styles/styles.css';
 import sidebarBox from '../../../images/sidebar_box.png';
 import custom_axios from "../../connection/axios";
 import { toast } from 'react-toastify';
 
-const AdminSideBar = () => {
+const StudentSideBar = () => {
   const [profile, setProfile] = useState(null);
   const [open, setOpen] = useState(false); 
 
@@ -20,7 +22,7 @@ const AdminSideBar = () => {
         const response = await custom_axios.get("/api/v1/student/currentStudentProfile");
         setProfile(response.data.data);
       } catch (error) {
-        toast.error(`Error occurred: ${error}`)
+        toast.error(`Error occurred: ${error}`);
       }
     };
     getProfileData();
@@ -29,18 +31,18 @@ const AdminSideBar = () => {
   const handleToggle = () => setOpen(!open);
 
   const items = [
-    { text: 'Home', icon: <FaHome />, link: '/admin/home' },
-    { text: 'Manage Students', icon: <FaBookOpen />, link: '/admin/manage-student' },
-    { text: 'Counsellor Requests', icon: <FaFolder />, link: '/admin/counsellorsrequests' },
-    { text: 'All Counsellors', icon: <FaFolder />, link: '/admin/allcounsellors' },
-    { text: 'Total Earning', icon: <FaCircleDollarToSlot />, link: '/dashboard/earning' },
-    { text: 'Setting', icon: <GrUserManager />, link: '/admin/setting' },
+    { text: 'Home', icon: <FaHome />, link: '/student/home' },
+    { text: 'Schedule Meeting', icon: <AiOutlineSchedule />, link: '/student/schedulemeeting' },
+    { text: 'Requested Meeting', icon: <BsPersonBoundingBox />, link: '/student/requestedmeeting' },
+    { text: 'Your Uploads', icon: <FaFolder />, link: '/student/youruploadcontent' },
+    { text: 'My Earning', icon: <FaCircleDollarToSlot />, link: '/student/earning' },
+    { text: 'Request a career counseling', icon: <GrUserManager />, link: '/student/careercounseling' },
+  
   ];
+
   return (
     <div>
-      {/* Overlay effect */}
-      <div className={`sidebar-overlay ${open ? 'open' : ''}`} onClick={() => setOpen(false)}></div>
-
+        <div className={`sidebar-overlay ${open ? 'open' : ''}`} onClick={() => setOpen(false)}></div>
       <Navbar
         style={{
           position: 'fixed',
@@ -48,8 +50,8 @@ const AdminSideBar = () => {
           top: 0,
           height: '100%',
           backgroundColor: '#6b21a8',
-          width: open ? '300px' : '60px',
-          zIndex: 1000,
+          width: open ? '300px' : '60px', 
+          zIndex: 1000, 
           transition: 'width 0.3s ease',
           borderRight: '2px solid #6b21a8',
         }}
@@ -82,20 +84,8 @@ const AdminSideBar = () => {
           {open ? <FaChevronLeft size={18} /> : <FaChevronRight size={18} />}
         </Button>
 
+
         <Nav className="flex-column mt-5" style={{ fontSize: "20px" }}>
-        {open && profile && (
-            <div style={{ position: "relative", marginLeft: "10px", marginBottom: "10px" }}>
-              <img src={sidebarBox} alt="sidebar Profile" style={{ width: "280px" }} />
-              <div style={{ position: "absolute", top: "10px", fontSize: "20px", display: "flex" }}>
-                <img src={profile.profilePic} alt="profile" style={{ height: "60px", width: "60px", margin: "0 10px" }} />
-                <div className="pt-2">
-                  <h4 style={{ fontSize: "20px", textAlign: "center" }}>{profile.fullName} <br />
-                    <span style={{ fontSize: "15px", color: "#6b21a8" }}>{profile.universityName}</span>
-                  </h4>
-                </div>
-              </div>
-            </div>
-          )}
           {open && profile && (
             <div style={{ position: "relative", marginLeft: "10px", marginBottom: "10px" }}>
               <img src={sidebarBox} alt="sidebar Profile" style={{ width: "280px" }} />
@@ -112,7 +102,7 @@ const AdminSideBar = () => {
           {items.map((item, index) => (
             <LinkContainer key={index} to={item.link}>
               <Nav.Link className="d-flex align-items-center text-dark">
-                <span style={{ fontSize: "30px",color:"#fff"  }}>
+                <span style={{ fontSize: "30px",color:"#fff" }}>
                   {item.icon}
                 </span>
                 {open && <span style={{ marginLeft: '10px', paddingTop: "8px",color:"#fff"  }}>{item.text}</span>}
@@ -146,4 +136,4 @@ const AdminSideBar = () => {
   );
 };
 
-export default AdminSideBar;
+export default StudentSideBar;

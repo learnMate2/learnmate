@@ -1,21 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Cookies from 'js-cookie'
-const ProtectedRoutes = ({ children }) => {
-    const navigate = useNavigate();
-    const [isAuthenticated,setIsAuthenticated] = useState(false)
-    useEffect(() => {
-        const token = Cookies.get('accessToken');
-        console.log(token,"-----------88----------");
-        if (token) {
-           setIsAuthenticated(true)
-        }else{
-            navigate('/login') 
-        }
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
-    }, [navigate]);
+const ProtectedRoutes = ({ children, allowRoles }) => {
+  const navigate = useNavigate();
 
-    return isAuthenticated ? children : null;
+  useEffect(() => {
+    const token = Cookies.get("accessToken");
+    const userRole = Cookies.get("role");
+
+    if (!token || !allowRoles.includes(userRole)) {
+      if (allowRoles.includes("student")) {
+        navigate("/login");
+      } else if (allowRoles.includes("counsellor")) {
+        navigate("/counsellor/login");
+      } else if (allowRoles.includes("admin")) {
+        navigate("/admin/login");
+      }
+    }
+  }, [navigate, allowRoles]);
+
+  // Only render children when authenticated
+  const token = Cookies.get("accessToken");
+  const userRole = Cookies.get("role");
+
+  return token && allowRoles.includes(userRole) ? children : null;
 };
 
 export default ProtectedRoutes;

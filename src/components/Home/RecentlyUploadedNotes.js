@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Row, Col, Container } from 'react-bootstrap';
 import custom_axios from "../connection/axios"
+import { toast } from 'react-toastify';
 
   
 
@@ -12,9 +13,8 @@ const RecentlyUploadedNotes = () => {
       try {
         const response = await custom_axios.get("/api/v1/documents/");
         setNotes(response.data.data)
-        console.log(response.data.data)
       } catch (error) {
-        console.log(`error occur ${error}`)
+        toast.error(`error occur ${error}`)
       }
     }
     getNotes();

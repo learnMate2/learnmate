@@ -5,25 +5,25 @@ import CounsellorSideBar from '../layout/CounsellorSidebar';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import custom_axios from '../../connection/axios';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const CounsellorResponse = () => {
     const { id } = useParams();
     const [counsellorResponse,setCounsellorResponse]=useState("")
     const handleAcceptMeeting = async() =>{
         try {
-            console.log(id)
             const response  = await custom_axios.put(`/api/v1/counsellor/acceptRequest/${id}`)
-            console.log(response.data,"==================")
+      toast.success(response.data.message || 'Successfully Request Accepted!');
+
         } catch (error) {
-            console.log(error)
+            toast.error(error,"occur occur")
         } 
     }
     const handleResponseSubmit = async() =>{
         try {
             const response =await custom_axios.put(`/api/v1/counsellor/respondToMeeting/${id}`)
-            console.log(response.data,'99999999999999999999')
         } catch (error) {
-            console.log(error)
+            toast.error(error.response.data.message);
         }
     }
     return (

@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import custom_axios from "../../connection/axios";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
-import CounsellorNavbar from "../layout/CounsellorNavbar";
-import CounsellorSideBar from "../layout/CounsellorSidebar";
 import { toast } from "react-toastify";
+import StudentNavbar from "../layout/StudentNavbar";
+import StudentSideBar from "../layout/StudentSidebar";
 
-const CounselorProfile = () => {
+const StudentCounselorProfile = () => {
   const { id } = useParams();
   const [counsellorById, setCounsellorById] = useState(null);
 
@@ -43,9 +43,9 @@ const CounselorProfile = () => {
 
   return (
     <>
-      <CounsellorNavbar />
+      <StudentNavbar />
       <div style={{ display: "flex" }}>
-        <CounsellorSideBar />
+        <StudentSideBar />
         <Container className="mt-4">
           {counsellorById ? (
             <Card className="p-4 shadow-lg" style={{ border: "none" }}>
@@ -194,4 +194,4 @@ const CounselorProfile = () => {
   );
 };
 
-export default CounselorProfile;
+export default StudentCounselorProfile;

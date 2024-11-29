@@ -3,6 +3,7 @@ import { Container, Row, Col, Button, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom'; 
 import custom_axios from '../../connection/axios';
 import "../../../styles/styles.css";
+import { toast } from 'react-toastify';
 
 const CounselingHeroSection = () => {
   const [counsellor, setCounsellor] = useState([]);
@@ -13,9 +14,9 @@ const CounselingHeroSection = () => {
       try {
         const response = await custom_axios.get('api/v1/counsellor/allCounsellors');
         setCounsellor(response.data.data);
-        console.log(response.data.data);
       } catch (error) {
-        console.error('Error fetching counselors:', error);
+      toast.error(error.response.data.message);
+
       }
     };
     getCounselor();

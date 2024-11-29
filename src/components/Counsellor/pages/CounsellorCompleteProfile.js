@@ -4,6 +4,7 @@ import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
 import CounsellorNavbar from '../layout/CounsellorNavbar';
 import CounsellorSidebar from '../layout/CounsellorSidebar';
 import custom_axios from '../../connection/axios';
+import { toast } from 'react-toastify';
 const CounsellorCompleteProfile = () => {
   const [formData, setFormData] = useState({
     field: "",
@@ -180,9 +181,11 @@ const CounsellorCompleteProfile = () => {
         "http://localhost:8000/api/v1/counsellor/postDetails",
         data,
       );
+      toast.success(res.data.message || 'Successfully Post Details!');
      
-    } catch (err) {
-      console.error(err);
+    } catch (error) {
+      toast.error(error.response.data.message);
+
     } finally {
       setUploading(false);
     }
@@ -408,17 +411,4 @@ const CounsellorCompleteProfile = () => {
 
 export default CounsellorCompleteProfile;
 
-// admin
-
-// home
-// counsellor request   -> send respose | accept
-
-// setting ->password change
-
-// admin
-
-// home
-// counsellor request   -> send respose | accept
-
-// setting ->password change
 

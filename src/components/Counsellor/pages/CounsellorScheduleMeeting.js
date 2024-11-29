@@ -3,21 +3,26 @@ import CounsellorSidebar from '../layout/CounsellorSidebar';
 import CounsellorNavbar from '../layout/CounsellorNavbar'
 import custom_axios from "../../connection/axios"
 import { Container, Card, Col, Row } from 'react-bootstrap';
+import { toast } from 'react-toastify';
+import Loader from '../../loader/Loader';
 
 const CounsellorScheduleMeeting = () => {
   const [counsellorScheduleMeeting, setCounsellorScheduleMeeting] = useState([])
-  useEffect(() => {
-    const getRequestedMeeting = async () => {
-      try {
-        const response = await custom_axios.get("/api/v1/meeting/allScheduledMeetings");
-        setCounsellorScheduleMeeting(response.data.data)
-        console.log(response.data.data, "CounsellorScheduleMeeting")
-      } catch (error) {
-        console.log(`error occur ${error}`)
-      }
-    }
-    getRequestedMeeting();
-  }, [])
+  const [loading, setLoading] = useState(true);
+  useEffect(()=>{
+const getRequestedMeeting = async()=>{
+  try {
+    const response = await custom_axios.get("/api/v1/meeting/allScheduledMeetings");
+    setCounsellorScheduleMeeting(response.data.data)
+  } catch (error) {
+    toast.error(error,"error occur");
+  }finally{
+    setLoading(false)
+  }
+}
+getRequestedMeeting()
+  },[])
+
   return (
     <>
       <CounsellorNavbar />
@@ -27,7 +32,7 @@ const CounsellorScheduleMeeting = () => {
         <Container fluid >
           <h1>Counsellor Schedule Meeting</h1>
           <Row className="m-2">
-            {
+            {loading ? (<Loader/>):
             counsellorScheduleMeeting.length>0?(
               counsellorScheduleMeeting.map((item, index) => (
                 <Col xs={12} sm={12} md={6} lg={4} key={index} className="mb-4">

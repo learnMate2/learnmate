@@ -6,14 +6,14 @@ import custom_axios from '../../connection/axios';
 import { toast } from 'react-toastify';
 import Loader from '../../loader/Loader';
 
-const AdminCounsellor = () => {
+const ListAllCounsellors = () => {
   const [counsellors, setCounsellors] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getCounsellors = async () => {
       try {
-        const response = await custom_axios.get('/api/v1/counsellor/allCounsellors?isVerified=false');
+        const response = await custom_axios.get('/api/v1/counsellor/allCounsellors');
         setCounsellors(response.data.data); 
       } catch (error) {
       toast.error(error.response.data.message);
@@ -48,7 +48,6 @@ const AdminCounsellor = () => {
                     <Card.Text><strong>Email:</strong> {counsellor.email}</Card.Text>
                     <Card.Text><strong>Role:</strong> {counsellor.role}</Card.Text>
                   </Card.Body>
-                <Button style={{background:"#6b21a8",border:"none"}} href={`/admin/approve-counsellor/${counsellor._id}`}>Approve</Button>
                 </Card>
               </Col>
             ))
@@ -62,4 +61,4 @@ const AdminCounsellor = () => {
   );
 };
 
-export default AdminCounsellor;
+export default ListAllCounsellors;

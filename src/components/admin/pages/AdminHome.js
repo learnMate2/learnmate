@@ -9,6 +9,7 @@ import Container from 'react-bootstrap/Container';
 import custom_axios from '../../connection/axios';
 import AdminNavbar from '../layout/AdminNavbar';
 import AdminSideBar from '../layout/AdminSidebar';
+import { toast } from 'react-toastify';
 
 const AdminHome = () => {
     const [data, setData] = useState(null);
@@ -17,10 +18,10 @@ const AdminHome = () => {
         const getSummary = async () => {
             try {
                 const response = await custom_axios.get('/api/v1/admin/getSummary');
-                setData(response.data.data); // Expecting an object here
-                console.log(response.data.data, "=================");
+                setData(response.data.data); 
             } catch (error) {
-                console.error("Error fetching summary data:", error);
+      toast.error(error.response.data.message);
+
             }
         };
        
@@ -35,7 +36,7 @@ const AdminHome = () => {
     return (
         <>
         <AdminNavbar/>
-        <div style={{display:"flex"}}>
+        <div style={{display:"flex",padding: "0 20px 0 70px" }}>
             <AdminSideBar/>
             <Container className="mt-4">
             <Row className="g-4">

@@ -8,6 +8,7 @@ import { AiOutlineSchedule } from "react-icons/ai";
 import { BsPersonBoundingBox } from "react-icons/bs";
 import sidebarBox from '../../../images/sidebar_box.png';
 import custom_axios from "../../connection/axios";
+import { toast } from 'react-toastify';
 
 const CounsellorSideBar = () => {
   const [profile, setProfile] = useState(null);
@@ -18,9 +19,8 @@ const CounsellorSideBar = () => {
       try {
         const response = await custom_axios.get("/api/v1/student/currentStudentProfile");
         setProfile(response.data.data);
-        console.log(response.data.data);
       } catch (error) {
-        console.log(`Error occurred: ${error}`);
+        toast.error(`Error occurred: ${error}`)
       }
     };
     getProfileData();
@@ -82,6 +82,19 @@ const CounsellorSideBar = () => {
         </Button>
 
         <Nav className="flex-column mt-5" style={{ fontSize: "20px" }}>
+        {open && profile && (
+            <div style={{ position: "relative", marginLeft: "10px", marginBottom: "10px" }}>
+              <img src={sidebarBox} alt="sidebar Profile" style={{ width: "280px" }} />
+              <div style={{ position: "absolute", top: "10px", fontSize: "20px", display: "flex" }}>
+                <img src={profile.profilePic} alt="profile" style={{ height: "60px", width: "60px", margin: "0 10px" }} />
+                <div className="pt-2">
+                  <h4 style={{ fontSize: "20px", textAlign: "center" }}>{profile.fullName} <br />
+                    <span style={{ fontSize: "15px", color: "#6b21a8" }}>{profile.universityName}</span>
+                  </h4>
+                </div>
+              </div>
+            </div>
+          )}
           {open && profile && (
             <div style={{ position: "relative", marginLeft: "10px", marginBottom: "10px" }}>
               <img src={sidebarBox} alt="sidebar Profile" style={{ width: "280px" }} />

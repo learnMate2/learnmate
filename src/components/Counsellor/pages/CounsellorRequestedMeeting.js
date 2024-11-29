@@ -3,17 +3,22 @@ import CounsellorSidebar from '../layout/CounsellorSidebar';
 import CounsellorNavbar from '../layout/CounsellorNavbar'
 import custom_axios from "../../connection/axios"
 import { Container, Card, Col, Row,Button } from 'react-bootstrap';
+import { toast } from 'react-toastify';
+import Loader from '../../loader/Loader';
 
 const CounsellorRequestedMeeting = () => {
   const [counsellorRequestedMeeting, setCounsellorRequestedMeeting] = useState([])
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const getRequestedMeeting = async () => {
       try {
         const response = await custom_axios.get("/api/v1/counsellor/allMeetingRequests");
         setCounsellorRequestedMeeting(response.data.data)
-        console.log(response.data.data, "CounsellorRequestedMeeting")
       } catch (error) {
-        console.log(`error occur ${error}`)
+        toast.error(`error occur ${error}`)
+      }finally{
+        setLoading(false)
       }
     }
     getRequestedMeeting();
@@ -27,7 +32,7 @@ const CounsellorRequestedMeeting = () => {
         <Container fluid >
           <h1>Counsellor Requested Meeting</h1>
           <Row className="m-2">
-            {
+            {loading ? (<Loader/>):
               counsellorRequestedMeeting.length > 0 ? (
                 counsellorRequestedMeeting.map((item, index) => (
                   <Col xs={12} sm={12} md={6} lg={4} key={index} className="mb-4">
