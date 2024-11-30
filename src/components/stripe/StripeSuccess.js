@@ -33,7 +33,7 @@ export default function StripeSuccess() {
         </Card.Text>
         <Link to="/dashboard">
           <Button variant="success" className="mt-3">
-            Torna indietro
+            Go to Dashboard
           </Button>
         </Link>
       </Card>
