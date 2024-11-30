@@ -12,8 +12,7 @@ const CounselingHeroSection = () => {
   useEffect(() => {
     const getCounselor = async () => {
       try {
-        const response = await custom_axios.get('api/v1/counsellor/allCounsellors');
-        console.log(response.data.data,"---------")
+        const response = await custom_axios.get('api/v1/counsellor/allCounsellors?isVerified=true');
         setCounsellor(response.data.data);
       } catch (error) {
       toast.error(error.response.data);

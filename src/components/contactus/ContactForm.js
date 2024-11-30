@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 function ContactUs() {
   const [name, setName] = useState(""); 
-  const [email, setEmail] = useState("");
+  
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState(""); 
@@ -13,17 +13,16 @@ function ContactUs() {
     e.preventDefault();
 
    
-    if (!name || !email || !subject || !message) {
+    if (!name || !subject || !message) {
       setErrorMessage("Please fill out all fields.");
       return;
     }
 
    
-    const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(
+    const mailtoUrl = `mailto:studentpaystudent@gmail.com?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(message)}`;
 
-    console.log(mailtoUrl,"0000000");
 
  
     const mailtoLink = document.createElement("a");
@@ -32,10 +31,9 @@ function ContactUs() {
     mailtoLink.click();
 
     setName("");
-    setEmail("");
     setSubject("");
     setMessage("");
-    setErrorMessage(""); 
+     
 };
 
   return (
@@ -53,20 +51,7 @@ function ContactUs() {
           >
             <h2 className="text-center mb-4">Contact Us</h2>
 
-            {/* Show error message if validation fails */}
-            {errorMessage && (
-              <div
-                style={{
-                  backgroundColor: "#f8d7da",
-                  color: "#721c24",
-                  padding: "10px",
-                  borderRadius: "4px",
-                  marginBottom: "20px",
-                }}
-              >
-                {errorMessage}
-              </div>
-            )}
+          
 
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="formName">
@@ -81,17 +66,7 @@ function ContactUs() {
                 />
               </Form.Group>
 
-              <Form.Group controlId="formEmail" className="mt-3">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="Enter your email"
-                  className="custom-input"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </Form.Group>
+              
 
               <Form.Group controlId="formSubject" className="mt-3">
                 <Form.Label>Subject</Form.Label>
