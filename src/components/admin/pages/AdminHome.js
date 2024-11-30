@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FaRegUserCircle } from "react-icons/fa";
-import { FaUpload, FaDownload } from "react-icons/fa6";
+import { FaDownload } from "react-icons/fa6";
 import { CiMoneyCheck1 } from "react-icons/ci";
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
@@ -20,7 +20,7 @@ const AdminHome = () => {
                 const response = await custom_axios.get('/api/v1/admin/getSummary');
                 setData(response.data.data); 
             } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data);
 
             }
         };
@@ -28,7 +28,7 @@ const AdminHome = () => {
         getSummary();
     }, []);
 
-    // Check if data is loaded
+
     if (!data) {
         return <div>Loading...</div>;
     }

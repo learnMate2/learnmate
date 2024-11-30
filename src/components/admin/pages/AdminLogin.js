@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Form, Button, Row, Col } from "react-bootstrap";
+import { Container, Form, Button} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../../../styles/styles.css";
 import signupImage from "../../../images/signup.jpg";
@@ -25,7 +25,7 @@ const AdminLogin = () => {
       toast.success(response.data.message || "Successfully logged in!");
       navigate("/admin");
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data);
     }
   };
 

@@ -16,7 +16,7 @@ export default function StudentNavbar() {
         toast.success(response.data.message || "successfully logout")
         navigate('/login')
       } catch (error) {
-       toast.error(error || "error occur")
+        toast.error(error.response.data);
       }
     }
   return (

@@ -2,19 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { Card, Row, Col, Container } from 'react-bootstrap';
 import custom_axios from "../connection/axios"
 import { toast } from 'react-toastify';
-
-  
-
-
 const RecentlyUploadedNotes = () => {
   const [notes, setNotes] = useState([])
   useEffect(() => {
     const getNotes = async () => {
       try {
-        const response = await custom_axios.get("/api/v1/documents/");
+        const response = await custom_axios.get("/api/v1/documents/recentDocuments");
         setNotes(response.data.data)
       } catch (error) {
-        toast.error(`error occur ${error}`)
+        toast.error(error.response.data);
       }
     }
     getNotes();

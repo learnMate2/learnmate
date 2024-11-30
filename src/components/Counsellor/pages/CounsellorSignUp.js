@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Form, Button, Row, Col } from 'react-bootstrap';
+import { Container, Form, Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import "../../../styles/styles.css";
 import signupImage from "../../../images/signup.jpg";
@@ -25,10 +25,10 @@ const CounsellorSignUp = () => {
         email,
         password,
       });
-      toast.success('Successfully registered!');
+      toast.success(response.data.message || 'Successfully registered!');
       navigate("/counsellor/login");
     } catch (error) {
-      toast.error('error occured');
+      toast.error(error.response.data || "Wrong Credentials");
     }
   };
 
@@ -115,7 +115,7 @@ const CounsellorSignUp = () => {
               background: "#6b21a8",
               padding: "20px",
               margin: 0,
-              height: "100%", // Ensure full height
+              height: "100%", 
               display: "flex",
               justifyContent: "center",
             }}

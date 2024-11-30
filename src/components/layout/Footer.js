@@ -23,8 +23,7 @@ const Footer = () => {
             <Link to='/' className='quick_links'><FaLongArrowAltRight style={{marginRight:"5px"}}/> Home</Link>
             <Link to='/about' className='quick_links'><FaLongArrowAltRight style={{marginRight:"5px"}}/> About</Link>
             <Link to='/contact' className='quick_links'><FaLongArrowAltRight style={{marginRight:"5px"}}/> Contact</Link>
-            <Link to='#' className='quick_links'><FaLongArrowAltRight style={{marginRight:"5px"}}/> privacy policy</Link>
-            <Link to='#' className='quick_links'><FaLongArrowAltRight style={{marginRight:"5px"}}/> Terms & Conditions</Link>
+            <Link to='/pirvacy-policy' className='quick_links'><FaLongArrowAltRight style={{marginRight:"5px"}}/> privacy policy</Link>
           </div>
         </Col>
         <Col xs={12} md={3} className="text-white">

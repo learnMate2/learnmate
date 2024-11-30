@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import AdminNavbar from '../layout/AdminNavbar';
 import AdminSideBar from '../layout/AdminSidebar';
-import { Container, Card, Row, Col, Button } from 'react-bootstrap';
+import { Container, Card, Row, Col } from 'react-bootstrap';
 import custom_axios from '../../connection/axios';
 import { toast } from 'react-toastify';
 import Loader from '../../loader/Loader';
@@ -16,7 +16,7 @@ const ListAllCounsellors = () => {
         const response = await custom_axios.get('/api/v1/counsellor/allCounsellors');
         setCounsellors(response.data.data); 
       } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data);
       }finally{
         setLoading(false)
       }

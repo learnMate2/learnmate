@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
 
 import CounsellorNavbar from '../layout/CounsellorNavbar';
@@ -59,7 +59,7 @@ const CounsellorCompleteProfile = () => {
     if (field === "profilePic") {
       setFormData({
         ...formData,
-        profilePic: e.target.files[0], // Directly set the file
+        profilePic: e.target.files[0], 
       });
     } else if (arrayName === "degrees") {
       const updatedArray = [...formData.degrees];
@@ -171,7 +171,7 @@ const CounsellorCompleteProfile = () => {
       }
     });
 
-    // Append profilePic
+    
     if (formData.profilePic) {
       data.append("profilePic", formData.profilePic);
     }
@@ -184,7 +184,7 @@ const CounsellorCompleteProfile = () => {
       toast.success(res.data.message || 'Successfully Post Details!');
      
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data);
 
     } finally {
       setUploading(false);

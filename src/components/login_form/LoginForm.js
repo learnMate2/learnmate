@@ -21,14 +21,11 @@ const LoginForm = () => {
         email,
         password,
       });
-      console.log(response.data.message,"555555")
       toast.success(response.data.message || 'Successfully logged in!');
       navigate("/student/home");
       
     } catch (error) {
-      const errorMessage = error.response.data ;
-      console.log(errorMessage, "999999");
-      toast.error(errorMessage);
+      toast.error(error.response.data);
     }
   };
 

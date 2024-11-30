@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AdminNavbar from '../layout/AdminNavbar';
 import AdminSideBar from '../layout/AdminSidebar';
-import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import {  Card, Col, Container, Row } from 'react-bootstrap';
 import custom_axios from '../../connection/axios';
 import { toast } from 'react-toastify';
 import Loader from '../../loader/Loader';
@@ -17,7 +17,7 @@ const AdminManageStudent = () => {
         setStudents(response.data.data);
         console.log(response.data.data);
       } catch (error) {
-        toast.error(error.response?.data?.message || "Something went wrong");
+        toast.error(error.response.data|| "Something went wrong");
       } finally {
         setLoading(false);
       }

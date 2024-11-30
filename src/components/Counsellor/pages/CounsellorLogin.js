@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Container, Form, Button, Row, Col } from 'react-bootstrap';
+import { Container, Form, Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import "../../../styles/styles.css";
 import signupImage from "../../../images/signup.jpg";
 import custom_axios from "../../../components/connection/axios";
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 import Layout from '../../layout/Layout';
+import { toast } from 'react-toastify';
 
 const CounsellorLogin = () => {
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ const CounsellorLogin = () => {
       toast.success(response.data.message || 'Successfully logged in!');
       navigate("/counsellor");
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data);
     }
   };
 

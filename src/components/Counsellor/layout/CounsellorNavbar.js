@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Navbar, Container } from 'react-bootstrap';
 import profile from '../../../images/profile.png';
 import '../../../styles/styles.css';
@@ -16,7 +16,7 @@ const navigate = useNavigate()
         toast.success(response.data.message || "successfully logout")
         navigate('/counsellor/login')
       } catch (error) {
-       toast.error(error || "error occur")
+       toast.error(error.response.data || "error occur")
       }
     }
  

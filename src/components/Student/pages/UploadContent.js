@@ -36,7 +36,7 @@ const UploadContent = () => {
       toast.success(response.data.message || 'Successfully uploaded document!');
       navigate("/student/youruploadcontent")
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data);
     }
   };
 

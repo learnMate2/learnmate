@@ -7,9 +7,7 @@ import {
   InputGroup,
   Form,
   Modal,
-  Button,
   Card,
-  Rating,
 } from "react-bootstrap";
 import { Typewriter } from "react-simple-typewriter";
 import custom_axios from "../connection/axios";
@@ -25,9 +23,8 @@ const HeroSection = () => {
       const response = await custom_axios.get(
         `api/v1/documents/searchDocuments?q=${searchQuery}`
       );
-      console.log(response.data, "search------");
-      setSearchResults(response.data.data); // Extract 'data' from the response
-      setShowModal(true); // Open the modal
+      setSearchResults(response.data.data); 
+      setShowModal(true);
     } catch (error) {
       console.error("Error fetching search results:", error);
     }
@@ -35,7 +32,7 @@ const HeroSection = () => {
 
   const closeModal = () => {
     setShowModal(false);
-    setSearchResults([]); // Clear results when closing the modal
+    setSearchResults([]); 
   };
 
   return (
@@ -108,9 +105,6 @@ const HeroSection = () => {
                       <Card.Title>{note.title}</Card.Title>
                       <Card.Text>
                         <strong>Course: </strong>{note.course}
-                      </Card.Text>
-                      <Card.Text>
-                        <strong>Price: </strong>${note.price}
                       </Card.Text>
                       <Card.Text>
                         <strong>Rating: </strong>{note.rating.average} / 5

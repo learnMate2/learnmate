@@ -58,7 +58,6 @@ html::-webkit-scrollbar-thumb {
   text-decoration: none;
 }
 
-/* Adjust styles for the university card upload button */
 input[type="file"] {
   border: 1px solid #ced4da;
   border-radius: 4px;

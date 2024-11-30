@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Container, Form, Button, Row, Col } from 'react-bootstrap';
+import { Container, Form, Button } from 'react-bootstrap';
 import "../../../styles/styles.css";
 import custom_axios from "../../connection/axios";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 import Layout from '../../layout/Layout';
-import signupImage from "../../../images/signup.jpg"; // Example image import
+import signupImage from "../../../images/signup.jpg"; 
 
 const Forgot = () => {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const Forgot = () => {
       toast.success(response.data.message || 'Password reset request sent!');
       navigate("/dashboard/home");
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data);
     }
   };
 
@@ -85,7 +85,7 @@ const Forgot = () => {
               Forgot your password? No worries! Just enter your email, and we'll send you a link to reset your password.
             </p>
             <img
-              src={signupImage} // Optional image for the right side (replace with your image path)
+              src={signupImage} 
               alt="Reset Password"
               style={{
                 width: "100%",

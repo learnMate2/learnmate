@@ -16,14 +16,14 @@ const CounsellorResponse = () => {
       toast.success(response.data.message || 'Successfully Request Accepted!');
 
         } catch (error) {
-            toast.error(error,"occur occur")
+            toast.error(error.response.data);
         } 
     }
     const handleResponseSubmit = async() =>{
         try {
             const response =await custom_axios.put(`/api/v1/counsellor/respondToMeeting/${id}`)
         } catch (error) {
-            toast.error(error.response.data.message);
+            toast.error(error.response.data);
         }
     }
     return (

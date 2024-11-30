@@ -26,7 +26,7 @@ const Reset = () => {
       toast.success(response.data.message || 'Password reset successful!');
       navigate("/dashboard/home");
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data);
     }
   };
 
@@ -89,7 +89,7 @@ const Reset = () => {
             Forgot your password? No worries! Just enter your new password, and you're all set.
           </p>
           <img
-            src={signupImage} // Optional image for the right side
+            src={signupImage} 
             alt="Reset Password"
             style={{
               width: "100%",

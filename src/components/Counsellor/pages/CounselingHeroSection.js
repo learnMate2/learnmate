@@ -13,9 +13,10 @@ const CounselingHeroSection = () => {
     const getCounselor = async () => {
       try {
         const response = await custom_axios.get('api/v1/counsellor/allCounsellors');
+        console.log(response.data.data,"---------")
         setCounsellor(response.data.data);
       } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data);
 
       }
     };
@@ -56,9 +57,6 @@ const CounselingHeroSection = () => {
                   </Card.Text>
                   <Card.Text>
                     {item.profession}
-                  </Card.Text>
-                  <Card.Text>
-                    Rating
                   </Card.Text>
                   <Button 
                     style={{ padding: "10px 20px", background: "#6b21a8", border: "none" }} 

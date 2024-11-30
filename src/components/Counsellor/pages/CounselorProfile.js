@@ -20,7 +20,7 @@ const CounselorProfile = () => {
       };
       getCounselor();
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data);
     }
   }, [id]);
   const [proposedTime, setProposedTime] = useState("");
@@ -37,7 +37,7 @@ const CounselorProfile = () => {
       );
       toast.success(res.data.message || "Successfully Requested For Meeting");
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data);
     }
   };
 

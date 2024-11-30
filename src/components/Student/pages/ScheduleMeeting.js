@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import custom_axios from "../../connection/axios";
 import { Container, Card, Col, Row, Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
-import Loader from '../../loader/Loader'; // Import the Loader component
+import Loader from '../../loader/Loader'; 
 import StudentNavbar from '../layout/StudentNavbar';
 import StudentSideBar from '../layout/StudentSidebar';
 import { toast } from 'react-toastify';
@@ -15,14 +15,14 @@ const ScheduleMeeting = () => {
 
   useEffect(() => {
     const getScheduleMeeting = async () => {
-      setLoading(true); // Start loading
+      setLoading(true);
       try {
         const response = await custom_axios.get("/api/v1/meeting/allScheduledMeetings");
         setScheduleMeeting(response.data.data);
       } catch (error) {
-        toast.error(error.response.data.message);
+        toast.error(error.response.data);
       } finally {
-        setLoading(false); // Stop loading
+        setLoading(false);
       }
     };
     getScheduleMeeting();

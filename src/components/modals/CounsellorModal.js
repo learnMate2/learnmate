@@ -4,7 +4,6 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import custom_axios from "../connection/axios";
 import { toast } from "react-toastify";
-import { useParams } from "react-router-dom";
 
 const CounsellorModal = ({ show, onHide,documentId }) => {
   const [ratingValue, setRatingValue] = useState("");
@@ -22,7 +21,7 @@ const CounsellorModal = ({ show, onHide,documentId }) => {
       );
       toast.success("Rating submitted successfully!");
     } catch (error) {
-      toast.error(error.response?.data?.message || "Failed to submit rating");
+      toast.error(error.response.data);
     }
   };
 

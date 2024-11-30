@@ -224,7 +224,7 @@ const CounsellorUpdate = () => {
     formData.deletedReferenceDocuments.forEach((url, idx) => {
       data.append(`deletedReferenceDocuments[${idx}]`, url);
     });
-    // Append profilePic if updated
+  
     if (formData.profilePic) {
       data.append("profilePic", formData.profilePic);
     }
@@ -236,7 +236,7 @@ const CounsellorUpdate = () => {
       );
       toast.success(res.data.message || "Successfully User Updated!");
     } catch (err) {
-      toast.error(err.response.data.message);
+      toast.error(err.response.data);
     } finally {
       setUploading(false);
     }

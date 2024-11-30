@@ -20,7 +20,7 @@ const CounsellorSideBar = () => {
         const response = await custom_axios.get("/api/v1/student/currentStudentProfile");
         setProfile(response.data.data);
       } catch (error) {
-        toast.error(`Error occurred: ${error}`)
+        toast.error(error.response.data)
       }
     };
     getProfileData();

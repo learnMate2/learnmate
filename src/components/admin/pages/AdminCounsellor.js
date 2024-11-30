@@ -16,7 +16,7 @@ const AdminCounsellor = () => {
         const response = await custom_axios.get('/api/v1/counsellor/allCounsellors?isVerified=false');
         setCounsellors(response.data.data); 
       } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data);
       }finally{
         setLoading(false)
       }

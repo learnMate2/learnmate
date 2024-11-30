@@ -15,7 +15,7 @@ const getRequestedMeeting = async()=>{
     const response = await custom_axios.get("/api/v1/meeting/allScheduledMeetings");
     setCounsellorScheduleMeeting(response.data.data)
   } catch (error) {
-    toast.error(error,"error occur");
+    toast.error(error.response.data);
   }finally{
     setLoading(false)
   }

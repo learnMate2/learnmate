@@ -6,7 +6,7 @@ import custom_axios from '../connection/axios';
 import { toast } from 'react-toastify';
 
 const DocumentModal = ({ show, onHide, documentId }) => {
-  const [value, setValue] = useState(""); // Captures the selected rating
+  const [value, setValue] = useState("");
 
   const submitRating = async (e) => {
     e.preventDefault();
@@ -16,7 +16,7 @@ const DocumentModal = ({ show, onHide, documentId }) => {
       });
       toast.success("Rating submitted successfully!");     
     } catch (error) {
-      toast.error(error.response?.data?.message || "Failed to submit rating");
+      toast.error(error.response.data);
     }
   };
 

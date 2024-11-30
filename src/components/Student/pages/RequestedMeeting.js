@@ -17,7 +17,7 @@ const RequestedMeeting = () => {
         const response = await custom_axios.get("/api/v1/student/allRequestedMeetings");
         setRequestedMeeting(response.data.data)
       } catch (error) {
-        toast.error(error.response.data.message);
+        toast.error(error.response.data);
       }finally {
         setLoading(false); 
       }

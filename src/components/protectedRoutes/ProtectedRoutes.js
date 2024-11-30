@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
@@ -20,7 +20,6 @@ const ProtectedRoutes = ({ children, allowRoles }) => {
     }
   }, [navigate, allowRoles]);
 
-  // Only render children when authenticated
   const token = Cookies.get("accessToken");
   const userRole = Cookies.get("role");
 

@@ -27,7 +27,7 @@ const AdminSignup = () => {
       toast.success(response.data.message || 'Successfully registered!');
       navigate("/admin/login");
     } catch (error) {
-      toast.error(error.response?.data?.message || 'An error occurred');
+      toast.error(error.response.data);
     }
   };
 

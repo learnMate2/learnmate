@@ -16,9 +16,10 @@ const CounsellorHome = () => {
     const getCounselor = async () => {
       try {
         const response = await custom_axios.get(`api/v1/counsellor/current`);
+        console.log(response.data)
         setCounsellorById(response.data.data);
       } catch (error) {
-        toast.error(error.message || 'Error occurred while fetching counselor details');
+        toast.error(error.response.data);
       } finally {
         setLoading(false);
       }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Navbar, Container, Dropdown } from 'react-bootstrap';
 import profile from '../../../images/profile.png'
 import '../../../styles/styles.css'
@@ -15,7 +15,7 @@ export default function AdminNavbar() {
       toast.success(response.data.message || "successfully logout")
       navigate('/admin/login')
     } catch (error) {
-     toast.error(error || "error occur")
+     toast.error(error.response.data || "error occur")
     }
   }
   return (

@@ -19,7 +19,7 @@ const AdminApproveCounsellor = () => {
       };
       getCounselor();
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data);
     }
 
   }, [id]);
@@ -28,7 +28,7 @@ const AdminApproveCounsellor = () => {
       const response = await custom_axios.post(`/api/v1/admin/verifyCounsellor/${id}`)
       toast.success(response.data.message || 'Successfully Approved!');
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data);
     }
   }
   const handleResponseSubmit = async (e) => {
@@ -40,7 +40,7 @@ const AdminApproveCounsellor = () => {
     toast.success(response.data.message || 'Successfully Submit Response!');
 
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data);
 
     }
   }
@@ -108,7 +108,7 @@ const AdminApproveCounsellor = () => {
                         <li key={index} style={{ marginBottom: '10px', listStyle: "none" }}>
                           <a href={doc} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
                             <img
-                              src={pdf} // Replace with the path to your document icon
+                              src={pdf}
                               alt="Document Icon"
                               style={{ width: '30px', height: '30px', marginRight: '10px' }}
                             />

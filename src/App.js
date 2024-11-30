@@ -8,7 +8,6 @@ import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Notfound from "./pages/Notfound";
-import DashboardHome from "./components/Student/pages/StudentHome";
 import RequestedMeeting from "./components/Student/pages/RequestedMeeting";
 import MyEarning from "./components/Student/pages/MyEarning";
 import ScheduleMeeting from "./components/Student/pages/ScheduleMeeting";
@@ -38,7 +37,8 @@ import StudentHome from "./components/Student/pages/StudentHome";
 import AdminSetting from "./components/admin/pages/AdminSetting";
 import StudentCounselorProfile from "./components/Student/pages/SudentCounsellorProfile";
 import ListAllCounsellors from "./components/admin/pages/ListAllCounsellors";
-import StripeSuccess from './components/stripe/StripeSuccess'
+import PirvacyPolicy from "./pages/PirvacyPolicy";
+import StripeSuccess from "./components/stripe/StripeSuccess";
 import PricingSection from "./components/stripe/PricingSection";
 
 const App = () => {
@@ -49,8 +49,10 @@ const App = () => {
     { path: "/contact", element: <Contact /> },
     { path: "/login", element: <Login /> },
     { path: "/signup", element: <Signup /> },
-    { path: "/logout", element: <Signup /> },
-    {path:'/PricingSection',element:<PricingSection/>},
+    { path: "/pirvacy-policy", element: <PirvacyPolicy /> },
+    {path:"/stripe/success",element:<StripeSuccess/>},
+    {path:"/PricingSection",element:<PricingSection/>},
+    
     { path: "*", element: <Notfound /> },
     {
       path: "/dashboard",
@@ -60,8 +62,6 @@ const App = () => {
         </ProtectedRoutes>
       ),
     },
-    // { path: "/student/home", element:<StudentHome /> },
-    // { path: "/student/requestedmeeting", element:  <RequestedMeeting />},
     {
       path: "/student/home",
       element: (
@@ -90,8 +90,7 @@ const App = () => {
       path: "/student/careercounseling",
       element: (
         <ProtectedRoutes allowRoles={["student"]}>
-          {" "}
-          <CareerCounseling />{" "}
+          <CareerCounseling />
         </ProtectedRoutes>
       ),
     },
@@ -241,10 +240,6 @@ const App = () => {
           <AdminSetting />
         </ProtectedRoutes>
       ),
-    },
-    {
-      path: "/stripe/success",
-      element: <StripeSuccess/>
     },
   ]);
 
